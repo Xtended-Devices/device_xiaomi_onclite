@@ -1,6 +1,16 @@
+typeattribute system_server system_executes_vendor_violators;
+
+# Input devices
+r_dir_file(system_server, idc_file);
+r_dir_file(system_server, keylayout_file);
+
+# Fingerprint
+get_prop(system_server, fp_prop);
+
 #============= system_server ==============
 allow system_server sysfs_vibrator:file rw_file_perms;
 allow system_server vendor_default_prop:file { getattr open read };
 # Smart charger
 allow system_server sysfs_battery_supply:file rw_file_perms;
+
 
