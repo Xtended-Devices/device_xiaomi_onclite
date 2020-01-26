@@ -427,4 +427,7 @@
          during initialization when the setting is still null. -->
     <bool name="config_dozeAlwaysOnEnabled">false</bool>
 
+    <!-- Whether we have a multi coloured battery LED or not -->
+    <bool name="config_multiColorBatteryLed">false</bool>
+
 </resources>
