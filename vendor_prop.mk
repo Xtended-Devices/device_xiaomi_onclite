@@ -193,6 +193,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown \
     ro.telephony.default_network=22,20 \
     telephony.lteOnCdmaDevice=1 \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Storage
