@@ -22,12 +22,6 @@
     <!-- KCal -->
     <string name="device_kcal_title">Display Color Calibration</string>
 
-    <!-- Ambient Display -->
-    <string name="ambient_display_xiaomi">Xiaomi Doze</string>
-    <string name="advanced_doze_summary">Ambient Display</string>
-
-    <string name="vibration_title">Haptic feedback</string>
-    <string name="vibration_strength_title">Strength</string>
     <!-- Spectrum Profiles -->
     <string name="spectrum_profile_title">Spectrum</string>
     <string name="spectrum_title">Spectrum Profiles</string>

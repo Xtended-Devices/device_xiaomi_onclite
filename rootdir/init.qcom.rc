@@ -90,13 +90,7 @@ on early-boot
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
-    # Vibrator permissions
-    chown root system /sys/class/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/class/timed_output/vibrator/vtg_level
-
     # XiaomiParts
-    chown system system /sys/devices/virtual/timed_output/vibrator/vtg_level
-    chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
     chown system system /sys/module/hall/parameters/hall_toggle
     chmod 0660 /sys/module/hall/parameters/hall_toggle
     chown system system /sys/devices/virtual/thermal/thermal_message/sconfig
