@@ -43,17 +43,12 @@
                 android:targetPackage="org.lineageos.settings.kcal" />
         </Preference>
 
-        <Preference
-            android:key="device_doze"
-            android:persistent="false"
-            android:summary="@string/advanced_doze_summary"
-            android:title="@string/ambient_display_xiaomi"
-            android:icon="@drawable/ic_doze">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"
-                android:targetPackage="org.lineageos.settings.doze" />
-        </Preference>
+        <org.lineageos.settings.device.preferences.SecureSettingSwitchPreference
+            android:defaultValue="false"
+            android:key="backlight_dimmer"
+            android:icon="@drawable/ic_backlight"
+            android:title="Backlight Dimmer"
+            android:summary="Dim the display to the maximum value" /> 
     </PreferenceCategory>
 
     <PreferenceCategory

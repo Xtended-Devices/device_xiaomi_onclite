@@ -42,6 +42,9 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_DEVICE_DOZE = "device_doze";
     private static final String PREF_DEVICE_KCAL = "device_kcal";
 
+    public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
+    public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
+
     public static final String PREF_THERMAL = "thermal";
     public static final String THERMAL_PATH = "/sys/devices/virtual/thermal/thermal_message/sconfig";
 
@@ -56,7 +59,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
     private SecureSettingListPreference mTHERMAL;
-
+    public SecureSettingSwitchPreference mBacklightDimmer;
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.preferences_xiaomi_parts, rootKey);
@@ -82,6 +85,14 @@ public class DeviceSettings extends PreferenceFragment implements
         mTHERMAL.setValue(FileUtils.getValue(THERMAL_PATH));
         mTHERMAL.setSummary(mTHERMAL.getEntry());
         mTHERMAL.setOnPreferenceChangeListener(this);
+
+        if (FileUtils.fileWritable(BACKLIGHT_DIMMER_PATH)) {
+            mBacklightDimmer = (SecureSettingSwitchPreference) findPreference(PREF_BACKLIGHT_DIMMER);
+            mBacklightDimmer.setChecked(FileUtils.getFileValueAsBoolean(BACKLIGHT_DIMMER_PATH, false));
+            mBacklightDimmer.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(PREF_BACKLIGHT_DIMMER));
+        }
 
         boolean enhancerEnabled;
         try {
@@ -129,6 +140,10 @@ public class DeviceSettings extends PreferenceFragment implements
                 mTHERMAL.setValue((String) value);
                 mTHERMAL.setSummary(mTHERMAL.getEntry());
                 FileUtils.setValue(THERMAL_PATH, (String) value);
+                break;
+
+            case PREF_BACKLIGHT_DIMMER:
+                FileUtils.setValue(BACKLIGHT_DIMMER_PATH, (boolean) value);
                 break;
 
             case PREF_ENABLE_DIRAC:
