@@ -28,18 +28,38 @@
     </string-array>
 
     <string-array name="thermal_profiles">
+        <item>@string/thermal_notset</item>
         <item>@string/thermal_balance</item>
         <item>@string/thermal_performance</item>
         <item>@string/thermal_battery</item>
         <item>@string/thermal_gaming</item>
         <item>@string/thermal_extreme_battery</item>
+        <item>@string/thermal_incalls</item>
+        <item>@string/thermal_game</item>
+        <item>@string/thermal_dynamic</item>
+        <item>@string/thermal_class</item>
+        <item>@string/thermal_camera</item>
+        <item>@string/thermal_pubg</item>
+        <item>@string/thermal_youtube</item>
+        <item>@string/thermal_arvr</item>
+        <item>@string/thermal_game2</item>
     </string-array>
     <string-array name="thermal_values">
+        <item>-1</item>
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
     </string-array>
 
     <!-- kcal -->

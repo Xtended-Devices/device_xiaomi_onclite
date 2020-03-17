@@ -46,6 +46,16 @@
     <string name="thermal_gaming">Gaming</string>
     <string name="thermal_balance">Balance</string>
     <string name="thermal_extreme_battery">Extreme Battery</string>
+    <string name="thermal_dynamic">Dynamic (evaluation)</string>
+    <string name="thermal_class">Class0</string>
+    <string name="thermal_arvr">AR-VR</string>
+    <string name="thermal_incalls">In-Calls</string>
+    <string name="thermal_game">Game</string>
+    <string name="thermal_game2">Game2</string>
+    <string name="thermal_notset">Not-Set</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_pubg">Pubg</string>
+    <string name="thermal_youtube">Youtube</string>
 
     <!-- kcal -->
     <string name="advanced_settings_kcal">Display Color Calibration</string>
