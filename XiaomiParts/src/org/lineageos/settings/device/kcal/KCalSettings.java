@@ -23,7 +23,7 @@ import androidx.preference.Preference;
 
 import org.lineageos.settings.device.FileUtils;
 import org.lineageos.settings.device.R;
-import org.lineageos.settings.device.preferences.SecureSettingCustomSeekBarPreference;
+import org.lineageos.settings.device.preferences.CustomSeekBarPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 
 public class KCalSettings extends PreferenceFragment implements
@@ -31,14 +31,14 @@ public class KCalSettings extends PreferenceFragment implements
 
     private SecureSettingSwitchPreference mEnabled;
     private SecureSettingSwitchPreference mSetOnBoot;
-    private SecureSettingCustomSeekBarPreference mRed;
-    private SecureSettingCustomSeekBarPreference mGreen;
-    private SecureSettingCustomSeekBarPreference mBlue;
-    private SecureSettingCustomSeekBarPreference mSaturation;
-    private SecureSettingCustomSeekBarPreference mValue;
-    private SecureSettingCustomSeekBarPreference mContrast;
-    private SecureSettingCustomSeekBarPreference mHue;
-    private SecureSettingCustomSeekBarPreference mMin;
+    private CustomSeekBarPreference mRed;
+    private CustomSeekBarPreference mGreen;
+    private CustomSeekBarPreference mBlue;
+    private CustomSeekBarPreference mSaturation;
+    private CustomSeekBarPreference mValue;
+    private CustomSeekBarPreference mContrast;
+    private CustomSeekBarPreference mHue;
+    private CustomSeekBarPreference mMin;
     private SecureSettingSwitchPreference mGrayscale;
 
     @Override
@@ -61,30 +61,30 @@ public class KCalSettings extends PreferenceFragment implements
         mSetOnBoot = (SecureSettingSwitchPreference) findPreference(PREF_SETONBOOT);
         mSetOnBoot.setOnPreferenceChangeListener(this);
 
-        mMin = (SecureSettingCustomSeekBarPreference) findPreference(PREF_MINIMUM);
+        mMin = (CustomSeekBarPreference) findPreference(PREF_MINIMUM);
         mMin.setOnPreferenceChangeListener(this);
 
-        mRed = (SecureSettingCustomSeekBarPreference) findPreference(PREF_RED);
+        mRed = (CustomSeekBarPreference) findPreference(PREF_RED);
         mRed.setOnPreferenceChangeListener(this);
 
-        mGreen = (SecureSettingCustomSeekBarPreference) findPreference(PREF_GREEN);
+        mGreen = (CustomSeekBarPreference) findPreference(PREF_GREEN);
         mGreen.setOnPreferenceChangeListener(this);
 
-        mBlue = (SecureSettingCustomSeekBarPreference) findPreference(PREF_BLUE);
+        mBlue = (CustomSeekBarPreference) findPreference(PREF_BLUE);
         mBlue.setOnPreferenceChangeListener(this);
 
-        mSaturation = (SecureSettingCustomSeekBarPreference) findPreference(PREF_SATURATION);
+        mSaturation = (CustomSeekBarPreference) findPreference(PREF_SATURATION);
         mSaturation.setEnabled((Settings.Secure.getInt(getContext().getContentResolver(),
                 PREF_GRAYSCALE, 0) == 0));
         mSaturation.setOnPreferenceChangeListener(this);
 
-        mValue = (SecureSettingCustomSeekBarPreference) findPreference(PREF_VALUE);
+        mValue = (CustomSeekBarPreference) findPreference(PREF_VALUE);
         mValue.setOnPreferenceChangeListener(this);
 
-        mContrast = (SecureSettingCustomSeekBarPreference) findPreference(PREF_CONTRAST);
+        mContrast = (CustomSeekBarPreference) findPreference(PREF_CONTRAST);
         mContrast.setOnPreferenceChangeListener(this);
 
-        mHue = (SecureSettingCustomSeekBarPreference) findPreference(PREF_HUE);
+        mHue = (CustomSeekBarPreference) findPreference(PREF_HUE);
         mHue.setOnPreferenceChangeListener(this);
 
         mGrayscale = (SecureSettingSwitchPreference) findPreference(PREF_GRAYSCALE);
