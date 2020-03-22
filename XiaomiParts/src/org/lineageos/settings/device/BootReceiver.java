@@ -27,6 +27,7 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
     public void onReceive(Context context, Intent intent) {
 
+
         FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));
 
@@ -60,6 +61,13 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 context.getContentResolver(), DeviceSettings.PREF_THERMAL));
         FileUtils.setValue(DeviceSettings.HALL_WAKEUP_PATH, Settings.Secure.getInt(
                 context.getContentResolver(), DeviceSettings.PREF_HALL_WAKEUP, 1) == 1 ? "Y" : "N");
+        int gain = Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_HEADPHONE_GAIN, 4);
+        FileUtils.setValue(DeviceSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
+        FileUtils.setValue(DeviceSettings.MICROPHONE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_MICROPHONE_GAIN, 0));
+        FileUtils.setValue(DeviceSettings.EARPIECE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
+                DeviceSettings.PREF_EARPIECE_GAIN, 0));
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
         context.startService(new Intent(context, DiracService.class));

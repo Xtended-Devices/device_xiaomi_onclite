@@ -34,6 +34,13 @@
     <string name="spectrum_gaming">Gaming</string>
     <string name="spectrum_balance">Balance</string>
 
+    <string name="audio_title">Audio</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Headphone gain</string>
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="earpiece_gain">Earpiece gain (Calls)</string>
+
     <!-- Thermal Profiles -->
     <string name="thermal_profile_title">Thermal</string>
     <string name="thermal_title">Thermal Settings</string>
