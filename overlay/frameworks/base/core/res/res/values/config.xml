@@ -455,11 +455,6 @@
     <!-- Whether we have a multi coloured battery LED or not -->
     <bool name="config_multiColorBatteryLed">false</bool>
 
-    <!-- Smart charge sysfs node and value for suspend/resume charging-->
-    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
-    <string name="config_SmartChargingSupspendValue" translatable="false">0</string>
-    <string name="config_SmartChargingResumeValue" translatable="false">1</string>
-
     <!-- Display mode remapping table.
          If the mode names returned by the backend do not match
          the predefined and translated strings in the Settings
@@ -493,5 +488,10 @@
     <string name="config_performance_profile" translatable="false">3</string>
     <string name="config_powersave_profile" translatable="false">2</string>
     <string name="config_screen_off_profile" translatable="false">2</string>
+
+    <!-- Smart charge sysfs node and value for suspend/resume charging-->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSupspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
 
 </resources>
