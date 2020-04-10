@@ -1,0 +1,7 @@
+# Maintainer                                                           
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.xtended.maintainer=MY♥90
+
+# Xteneded version
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.xtended.display.version=XQ-OFFICIAL-Release-v7.0

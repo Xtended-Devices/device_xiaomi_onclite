@@ -38,9 +38,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xtended.maintainer=MY♥90
-
 # Official
 XTENDED_BUILD_TYPE := OFFICIAL

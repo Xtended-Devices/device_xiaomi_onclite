@@ -230,3 +230,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/onclite/BoardConfigVendor.mk
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
