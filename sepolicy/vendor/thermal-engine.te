@@ -1,4 +1,4 @@
+typeattribute thermal-engine data_between_core_and_vendor_violators;
 allow thermal-engine sysfs:dir { open read };
 allow thermal-engine property_socket:sock_file { write };
 allow thermal-engine init:unix_stream_socket {connectto };
-
