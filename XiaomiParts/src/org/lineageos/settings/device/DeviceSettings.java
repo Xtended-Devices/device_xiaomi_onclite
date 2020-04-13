@@ -25,7 +25,6 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 
 import org.lineageos.settings.device.kcal.KCalSettingsActivity;
-import org.lineageos.settings.device.preferences.CustomSeekBarPreference;
 import org.lineageos.settings.device.preferences.SecureSettingListPreference;
 import org.lineageos.settings.device.preferences.SecureSettingSwitchPreference;
 
@@ -44,12 +43,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private static final String PREF_ENABLE_DIRAC = "dirac_enabled";
     private static final String PREF_HEADSET = "dirac_headset_pref";
     private static final String PREF_PRESET = "dirac_preset_pref";
-    public static final String PREF_HEADPHONE_GAIN = "headphone_gain";
-    public static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
-    public static final String PREF_MICROPHONE_GAIN = "microphone_gain";
-    public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
-    public static final String PREF_EARPIECE_GAIN = "earpiece_gain";
-    public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
 
     private static final String PREF_SPECTRUM = "spectrum";
     private static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
@@ -63,9 +56,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
 
     private SecureSettingListPreference mTHERMAL;
-    private CustomSeekBarPreference mHeadphoneGain;
-    private CustomSeekBarPreference mMicrophoneGain;
-    private CustomSeekBarPreference mEarpieceGain;
     private SecureSettingSwitchPreference mFastcharge;
     private SecureSettingListPreference mSPECTRUM;
     public SecureSettingSwitchPreference mBacklightDimmer;
@@ -109,15 +99,6 @@ public class DeviceSettings extends PreferenceFragment implements
             getPreferenceScreen().removePreference(findPreference(CATEGORY_HALL_WAKEUP));
         }
 
-        mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
-        mHeadphoneGain.setOnPreferenceChangeListener(this);
-
-        mMicrophoneGain = (CustomSeekBarPreference) findPreference(PREF_MICROPHONE_GAIN);
-        mMicrophoneGain.setOnPreferenceChangeListener(this);
-
-        mEarpieceGain = (CustomSeekBarPreference) findPreference(PREF_EARPIECE_GAIN);
-        mEarpieceGain.setOnPreferenceChangeListener(this);
-
         if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
             mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
             mFastcharge.setChecked(FileUtils.getFileValueAsBoolean(USB_FASTCHARGE_PATH, true));
@@ -149,18 +130,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_HALL_WAKEUP:
                 FileUtils.setValue(HALL_WAKEUP_PATH, (boolean) value ? "Y" : "N");
-                break;
-
-            case PREF_HEADPHONE_GAIN:
-                FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
-                break;
-
-            case PREF_MICROPHONE_GAIN:
-                FileUtils.setValue(MICROPHONE_GAIN_PATH, (int) value);
-                break;
-
-            case PREF_EARPIECE_GAIN:
-                FileUtils.setValue(EARPIECE_GAIN_PATH, (int) value);
                 break;
 
             case PREF_USB_FASTCHARGE:
