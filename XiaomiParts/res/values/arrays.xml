@@ -29,10 +29,6 @@
 
     <string-array name="thermal_profiles">
         <item>@string/thermal_notset</item>
-        <item>@string/thermal_balance</item>
-        <item>@string/thermal_performance</item>
-        <item>@string/thermal_battery</item>
-        <item>@string/thermal_gaming</item>
         <item>@string/thermal_extreme_battery</item>
         <item>@string/thermal_incalls</item>
         <item>@string/thermal_game</item>
@@ -46,10 +42,6 @@
     </string-array>
     <string-array name="thermal_values">
         <item>-1</item>
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
         <item>4</item>
         <item>8</item>
         <item>9</item>
