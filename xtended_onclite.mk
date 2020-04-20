@@ -40,3 +40,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Official
 XTENDED_BUILD_TYPE := OFFICIAL
+
+# Maintainer
+XTENDED_MAINTAINER := MY♥90
