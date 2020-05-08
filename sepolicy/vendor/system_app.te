@@ -4,6 +4,5 @@ allow system_app kcal_dev:dir search;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir search;
 typeattribute system_app data_between_core_and_vendor_violators;
-get_prop(system_app, spectrum_prop);
 allow system_app sysfs_kgsl:dir search;
 allow system_app sysfs_thermal:file write;

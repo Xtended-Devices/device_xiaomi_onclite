@@ -1,4 +1,2 @@
 # Fingerprint
 type fp_prop, property_type;
-# Spectrum
-type spectrum_prop, property_type;
