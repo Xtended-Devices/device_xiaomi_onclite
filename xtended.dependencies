@@ -17,4 +17,10 @@
     "branch": "xq-raphael",
     "remote": "Xtended-Devices"
  },
+ { 
+   "remote":       "github",
+   "repository":   "kdrag0n/proton-clang",
+   "target_path":  "prebuilts/clang/host/linux-x86/clang-11.0",
+   "revision":     "master"
+ }
 ]
