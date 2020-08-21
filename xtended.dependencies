@@ -14,12 +14,5 @@
    "target_path": "vendor/MiuiCamera",
    "branch": "xq-onclite",
    "clone-depth" : "1"
- },
- { 
-   "remote":       "github",
-   "repository":   "kdrag0n/proton-clang",
-   "target_path":  "prebuilts/clang/host/linux-x86/clang-11.0",
-   "branch":     "master",
-   "clone-depth" : "1"
  }
 ]
