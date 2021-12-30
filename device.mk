@@ -141,6 +141,10 @@ PRODUCT_COPY_FILES += \
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := verify
 
+# Doze
+PRODUCT_PACKAGES += \
+    XiaomiDoze
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
