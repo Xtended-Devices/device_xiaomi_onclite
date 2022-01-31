@@ -1,8 +1,8 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/spark_onclite.mk
+    $(LOCAL_DIR)/xtended_onclite.mk
 
 
 COMMON_LUNCH_CHOICES := \
-	spark_onclite-user \
-	spark_onclite-userdebug \
-	spark_onclite-eng
+	xtended_onclite-user \
+	xtended_onclite-userdebug \
+	xtended_onclite-eng
